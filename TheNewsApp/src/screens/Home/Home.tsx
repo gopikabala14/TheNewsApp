@@ -113,7 +113,9 @@ export const Home = ({navigation}) => {
         />
       </View>
       {selectedItems?.length ? (
-        <TouchableOpacity style={Styles.readLater} onPress={()=> navigation.navigate(AppScreens.ReadLaterScreen.name)}>
+        <TouchableOpacity
+          style={Styles.readLater}
+          onPress={() => navigation.navigate(AppScreens.ReadLaterScreen.name)}>
           <Text style={Styles.seeReadLater}>See Read Later</Text>
         </TouchableOpacity>
       ) : null}

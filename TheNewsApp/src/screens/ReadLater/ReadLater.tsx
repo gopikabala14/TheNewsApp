@@ -18,7 +18,7 @@ import {AppScreens} from '../../navigation/screens';
 
 export const ReadLater = ({navigation}) => {
   const [loadOffLineNews, setLoadOffLineNews] = useState([]);
-  
+
   useEffect(() => {
     loadAllData();
   }, []);
@@ -33,15 +33,17 @@ export const ReadLater = ({navigation}) => {
       }));
       setLoadOffLineNews(data);
     } catch (error) {
-        setLoadOffLineNews([]);
+      setLoadOffLineNews([]);
     }
   };
   const renderReadLater = ({item}) => {
     const data = JSON.parse(item?.value);
     return (
-      <TouchableOpacity style={Styles.articleTile} onPress={() => {
-        navigation.navigate(AppScreens.NewsDetailScreen.name, {news: data})
-      }}>
+      <TouchableOpacity
+        style={Styles.articleTile}
+        onPress={() => {
+          navigation.navigate(AppScreens.NewsDetailScreen.name, {news: data});
+        }}>
         <Text style={Styles.articleTitle}>{data?.title}</Text>
         <View style={Styles.authorView}>
           <Text style={Styles.authorText}>{'Author: '}</Text>

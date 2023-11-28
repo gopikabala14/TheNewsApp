@@ -16,7 +16,7 @@ export const NewsDetail = ({route}) => {
 
   const openExternalURL = async (url: string) => {
     await Linking.openURL(url);
-  }; 
+  };
   return (
     <SafeAreaView style={Styles.container}>
       <ScrollView style={{flex: 1}} showsVerticalScrollIndicator={false}>
@@ -27,8 +27,8 @@ export const NewsDetail = ({route}) => {
         <Text style={Styles.newsDesciption}>{news?.description}</Text>
         <Text style={Styles.newsContent}>{news?.content}</Text>
         <Text style={Styles.more}>{'Continue reading on:'}</Text>
-        <TouchableOpacity onPress={()=> news && openExternalURL(news?.url)}>
-        <Text style={Styles.newsUrl} >{news?.url}</Text>
+        <TouchableOpacity onPress={() => news && openExternalURL(news?.url)}>
+          <Text style={Styles.newsUrl}>{news?.url}</Text>
         </TouchableOpacity>
       </ScrollView>
     </SafeAreaView>
